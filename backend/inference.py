@@ -98,38 +98,99 @@ TOTAL_PARAMETERS = sum(
 # Training Statistics
 # ==========================================================
 
+# ==========================================================
+# Training & Evaluation Statistics
+# ==========================================================
+
+import json
+
 TRAINING_LOSS = "N/A"
 VALIDATION_LOSS = "N/A"
 TRAINED_EPOCH = "N/A"
 
-try:
+PSNR = "N/A"
+SSIM = "N/A"
+MSE = "N/A"
+LPIPS = "N/A"
 
-    checkpoint = torch.load(
-        MODEL_PATH,
-        map_location=DEVICE
-    )
+METRICS_FILE = os.path.join(
+    BASE_DIR,
+    "models",
+    "metrics.json"
+)
 
-    if isinstance(checkpoint, dict):
+EVALUATION_FILE = os.path.join(
+    BASE_DIR,
+    "models",
+    "evaluation.json"
+)
 
-        TRAINING_LOSS = checkpoint.get(
+# -------------------------
+# Training Metrics
+# -------------------------
+
+if os.path.exists(METRICS_FILE):
+
+    try:
+
+        with open(METRICS_FILE, "r") as f:
+
+            metrics = json.load(f)
+
+        TRAINING_LOSS = metrics.get(
             "training_loss",
             "N/A"
         )
 
-        VALIDATION_LOSS = checkpoint.get(
+        VALIDATION_LOSS = metrics.get(
             "validation_loss",
             "N/A"
         )
 
-        TRAINED_EPOCH = checkpoint.get(
+        TRAINED_EPOCH = metrics.get(
             "epoch",
             "N/A"
         )
 
-except Exception as e:
+    except Exception as e:
 
-    print("Unable to load checkpoint information:", e)
+        print(e)
 
+# -------------------------
+# Evaluation Metrics
+# -------------------------
+
+if os.path.exists(EVALUATION_FILE):
+
+    try:
+
+        with open(EVALUATION_FILE, "r") as f:
+
+            evaluation = json.load(f)
+
+        PSNR = evaluation.get(
+            "psnr",
+            "N/A"
+        )
+
+        SSIM = evaluation.get(
+            "ssim",
+            "N/A"
+        )
+
+        MSE = evaluation.get(
+            "mse",
+            "N/A"
+        )
+
+        LPIPS = evaluation.get(
+            "lpips",
+            "N/A"
+        )
+
+    except Exception as e:
+
+        print(e)
 # ==========================================================
 # Startup Log
 # ==========================================================
@@ -143,6 +204,11 @@ print("Parameters :", f"{TOTAL_PARAMETERS:,}")
 print("Epoch :", TRAINED_EPOCH)
 print("Training Loss :", TRAINING_LOSS)
 print("Validation Loss :", VALIDATION_LOSS)
+print("PSNR :", PSNR)
+print("SSIM :", SSIM)
+print("MSE :", MSE)
+print("LPIPS :", LPIPS)
+
 print("=" * 50)
 # ==========================================================
 # Inference
@@ -460,13 +526,13 @@ def enhance_infrared(input_path, output_path):
 
         # Evaluation Metrics
 
-        "psnr": psnr,
+        "psnr": PSNR if PSNR != "N/A" else psnr,
 
-        "ssim": ssim,
+        "ssim": SSIM if SSIM != "N/A" else ssim,
 
-        "mse": mse,
+        "mse": MSE if MSE != "N/A" else mse,
 
-        "lpips": lpips_score,
+        "lpips": LPIPS if LPIPS != "N/A" else lpips_score,
 
         # Training Statistics
 
