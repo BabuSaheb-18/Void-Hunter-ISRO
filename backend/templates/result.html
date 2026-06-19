@@ -1,0 +1,393 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Analysis Results | Void Hunter</title>
+
+    <!-- Base -->
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base/variables.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base/reset.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/base/animations.css') }}"
+    />
+
+    <!-- Layout -->
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/layout/background.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/layout/navbar.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/layout/hero.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/layout/footer.css') }}"
+    />
+
+    <!-- Components -->
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/components/cards.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/components/upload.css') }}"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/components/result.css') }}"
+    />
+
+    <!-- Responsive -->
+
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/responsive.css') }}"
+    />
+  </head>
+
+  <body>
+    <!-- ================================================= -->
+    <!-- BACKGROUND -->
+    <!-- ================================================= -->
+
+    <div class="space-bg"></div>
+
+    <div class="background-grid"></div>
+
+    <div id="particles"></div>
+
+    <img
+      src="{{ url_for('static', filename='image/satellite.png') }}"
+      class="floating-satellite result-satellite"
+      alt="Satellite"
+    />
+
+    <img
+      src="{{ url_for('static', filename='image/astronaut.png') }}"
+      class="floating-astronaut result-astronaut"
+      alt="Astronaut"
+    />
+
+    <!-- ================================================= -->
+    <!-- NAVBAR -->
+    <!-- ================================================= -->
+
+    <nav class="navbar">
+      <div class="logo">🪐 Surface Analysis System</div>
+
+      <div class="nav-links">
+        <a href="/"> 🛰 Mission Overview </a>
+
+        <a href="/pipeline"> ⚙ Processing Pipeline </a>
+
+        <a href="/inference"> 🚀 Begin Analysis </a>
+      </div>
+    </nav>
+
+    <!-- ================================================= -->
+    <!-- HERO -->
+    <!-- ================================================= -->
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="glass-card result-action-card1">
+          <h1>Enhancement Complete</h1>
+
+          <h2>AI Successfully Enhanced the Infrared Image</h2>
+
+          <p>
+            The uploaded infrared image has been processed using the
+            <strong>{{ report.model_name }}</strong>. The enhanced RGB image has
+            been generated successfully and is ready for visualization and
+            further analysis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- PROCESS STATUS -->
+    <!-- ================================================= -->
+
+    <section>
+      <div class="glass-card status-card">
+        <h2>✅ {{ report.status }}</h2>
+
+        <p>
+          Enhancement completed successfully in
+          <strong>{{ report.inference_time }}</strong>
+          using
+          <strong>{{ report.device }}</strong>.
+        </p>
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- IMAGE COMPARISON -->
+    <!-- ================================================= -->
+
+    <section>
+      <h2 class="section-title">
+        <u>Image Comparison</u>
+      </h2>
+
+      <div class="comparison-grid">
+        <!-- Original -->
+
+        <div class="glass-card image-card">
+          <h3>Original Infrared Image</h3>
+
+          <img src="/uploaded" alt="Original Infrared Image" />
+        </div>
+
+        <!-- Enhanced -->
+
+        <div class="glass-card image-card">
+          <h3>Enhanced RGB Output</h3>
+
+          <img src="/enhanced" alt="Enhanced RGB Output" />
+        </div>
+      </div>
+    </section>
+
+
+<section class="section">
+
+    <div class="action-buttons">
+
+        <a href="/enhanced"
+           download="enhanced_image.png"
+           class="action-btn primary-btn">
+
+            📥 Download Image
+
+        </a>
+
+        <a href="/inference"
+           class="action-btn secondary-btn">
+
+            🔄 Process Another Image
+
+        </a>
+
+        <a href="/download-report"
+   class="action-btn secondary-btn">
+
+    📄 Export AI Report
+
+</a>
+
+    </div>
+
+</section>
+
+    <!-- ================================================= -->
+    <!-- PROCESSING INFORMATION -->
+    <!-- ================================================= -->
+
+    <section class="processing-section">
+      <h2 class="section-title">
+        <u>Processing Information</u>
+      </h2>
+
+      <div class="glass-card analysis-card">
+        <div class="analysis-table">
+          <div class="metric-row">
+            <div class="metric-name">Processing Status</div>
+
+            <div class="metric-success">✓ {{ report.status }}</div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-name">Inference Time</div>
+
+            <div class="metric-value">{{ report.inference_time }}</div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-name">Processing Device</div>
+
+            <div class="metric-value">{{ report.device }}</div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-name">Input Resolution</div>
+
+            <div class="metric-value">{{ report.input_resolution }}</div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-name">Output Resolution</div>
+
+            <div class="metric-value">{{ report.output_resolution }}</div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-name">Input Image Size</div>
+
+            <div class="metric-value">{{ report.input_size }}</div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-name">Enhanced Image Size</div>
+
+            <div class="metric-value">{{ report.output_size }}</div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-name">Model Name</div>
+
+            <div class="metric-value">{{ report.model_name }}</div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-name">Model Version</div>
+
+            <div class="metric-value">{{ report.model_version }}</div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-name">AI Framework</div>
+
+            <div class="metric-value">{{ report.framework }}</div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-name">Prediction Type</div>
+
+            <div class="metric-value">{{ report.prediction }}</div>
+          </div>
+
+          <div class="metric-row">
+            <div class="metric-name">Total Parameters</div>
+
+            <div class="metric-value">{{ report.parameters }}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================================================= -->
+    <!-- PART 4 STARTS HERE -->
+    <!-- AI Evaluation Metrics (Challenge 10) -->
+    <!-- ================================================= -->
+    <!-- ================================================= -->
+    <!-- AI EVALUATION METRICS -->
+    <!-- ================================================= -->
+
+    <section class="processing-section">
+      <h2 class="section-title">
+        <u>AI Evaluation Metrics</u>
+      </h2>
+
+      <div class="glass-card analysis-card">
+        <div class="analysis-table">
+          <!-- PSNR -->
+
+          <div class="metric-row">
+            <div class="metric-name">PSNR</div>
+
+            <div class="metric-value">
+              {% if report.psnr != "N/A" %} {{ report.psnr }} dB {% else %} N/A
+              {% endif %}
+            </div>
+          </div>
+
+          <!-- SSIM -->
+
+          <div class="metric-row">
+            <div class="metric-name">SSIM</div>
+
+            <div class="metric-value">{{ report.ssim }}</div>
+          </div>
+
+          <!-- MSE -->
+
+          <div class="metric-row">
+            <div class="metric-name">MSE</div>
+
+            <div class="metric-value">{{ report.mse }}</div>
+          </div>
+
+          <!-- LPIPS -->
+
+          <div class="metric-row">
+            <div class="metric-name">LPIPS</div>
+
+            <div class="metric-value">{{ report.lpips }}</div>
+          </div>
+
+          <!-- Training Loss -->
+
+          <div class="metric-row">
+            <div class="metric-name">Training Loss</div>
+
+            <div class="metric-value">{{ report.training_loss }}</div>
+          </div>
+
+          <!-- Validation Loss -->
+
+          <div class="metric-row">
+            <div class="metric-name">Validation Loss</div>
+
+            <div class="metric-value">{{ report.validation_loss }}</div>
+          </div>
+
+          <!-- Ground Truth -->
+
+          <div class="metric-row">
+            <div class="metric-name">Ground Truth</div>
+
+            <div class="metric-value">
+              {% if report.ground_truth_found %} ✅ Available {% else %} ❌ Not
+              Available {% endif %}
+            </div>
+          </div>
+
+          <!-- Evaluation Status -->
+
+          <div class="metric-row">
+            <div class="metric-name">Evaluation Status</div>
+
+            <div class="metric-value">
+              {% if report.ground_truth_found %} Metrics Calculated {% else %}
+              Showing N/A (Reference Image Not Found) {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ==========================================
+    
+     <!-- Footer -->
+
+    <footer>
+      <div class="footer-box">
+        <div class="footer-title">TEAM VOID HUNTER</div>
+
+        <div class="footer-sub">Developed for ISRO Hackathon 2026</div>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

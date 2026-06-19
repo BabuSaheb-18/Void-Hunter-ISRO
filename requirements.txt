@@ -1,0 +1,15 @@
+Flask>=3.1.0
+numpy>=2.2.0
+opencv-python>=4.11.0
+Pillow>=11.0.0
+matplotlib>=3.10.0
+scikit-image>=0.25.0
+tqdm>=4.67.0
+
+torch
+torchvision
+torchaudio
+
+lpips>=0.1.4
+
+reportlab>=4.2.0

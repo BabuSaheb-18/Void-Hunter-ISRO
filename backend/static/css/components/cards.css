@@ -1,0 +1,349 @@
+/*==================================================
+                CARDS
+==================================================*/
+
+/* ==========================================
+   PREMIUM GLASS CARD
+========================================== */
+
+.glass-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    background:var(--glass);
+
+    backdrop-filter:blur(22px);
+
+    -webkit-backdrop-filter:blur(22px);
+
+    border:1px solid var(--glass-border);
+
+    border-radius:var(--radius-lg);
+
+    box-shadow:var(--card-shadow),
+               inset 0 1px 0 var(--glass-highlight);
+
+    transition:var(--transition-slow);
+
+}
+
+/* ==========================================
+   GLASS REFLECTION
+========================================== */
+
+.glass-card::before{
+
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:linear-gradient(
+        110deg,
+        transparent 15%,
+        rgba(255,255,255,.08) 35%,
+        rgba(255,255,255,.02) 55%,
+        transparent 80%
+    );
+
+    opacity:.6;
+
+    pointer-events:none;
+
+}
+
+/* ==========================================
+   GLASS HOVER
+========================================== */
+
+.glass-card:hover{
+
+    transform:translateY(-12px) scale(1.02);
+
+    border-color:var(--glass-border-hover);
+
+    box-shadow:var(--hover-shadow),
+               inset 0 1px 0 var(--glass-highlight-2);
+
+}
+
+.glass-card:hover::before{
+
+    animation:shine 1.2s ease;
+
+}
+
+/*==================================================
+                FEATURE CARD
+==================================================*/
+
+.feature-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:28px;
+
+    max-width:1600px;
+
+    margin:auto;
+
+}
+
+.feature-card{
+
+    min-height:260px;
+
+    padding:45px 28px;
+
+    transition:var(--transition);
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-12px);
+
+}
+
+.feature-card h3{
+
+    color:var(--primary);
+
+    font-size:1.65rem;
+
+    margin-bottom:22px;
+
+    font-weight:700;
+
+}
+
+.feature-card p{
+
+    color:var(--paragraph);
+
+    font-size:1.05rem;
+
+    line-height:1.9;
+
+}
+
+/*==================================================
+                TECH CARD
+==================================================*/
+
+.tech-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+
+    gap:35px;
+
+    max-width:1450px;
+
+    margin:auto;
+
+}
+
+.tech-card{
+
+    min-height:220px;
+
+    padding:45px 35px;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    align-items:center;
+
+    text-align:center;
+
+    font-size:1.45rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    transition:var(--transition);
+
+}
+
+.tech-card:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.tech-card span{
+
+    margin-top:18px;
+
+    color:var(--paragraph);
+
+    font-size:1rem;
+
+    line-height:1.8;
+
+}
+
+/*==================================================
+                STATUS CARD
+==================================================*/
+
+.status-card{
+
+    max-width:1000px;
+
+    margin:auto;
+
+    padding:40px;
+
+    text-align:center;
+
+}
+
+.status-card h2{
+
+    color:var(--success);
+
+    font-size:2rem;
+
+    margin-bottom:20px;
+
+    text-shadow:0 0 12px var(--success-glow);
+
+}
+
+.status-card p{
+
+    color:var(--text);
+
+    line-height:1.8;
+
+}
+
+/*==================================================
+                IMAGE CARD
+==================================================*/
+
+.image-card{
+
+    padding:30px;
+
+    text-align:center;
+
+}
+
+.image-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:20px;
+
+    font-size:1.4rem;
+
+}
+
+.image-card img{
+
+    width:100%;
+
+    border-radius:22px;
+
+    border:1px solid var(--glass-border);
+
+    transition:var(--transition);
+
+    box-shadow:var(--glass-shadow);
+
+}
+
+.image-card img:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:0 20px 45px var(--shadow-primary);
+
+}
+
+/*==================================================
+                SUMMARY CARD
+==================================================*/
+
+.summary-card{
+
+    padding:35px;
+
+    text-align:center;
+
+}
+
+.summary-card h3{
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+}
+
+.summary-card p{
+
+    color:var(--text);
+
+    line-height:1.6;
+
+}
+
+.summary-card span{
+
+    display:block;
+
+    margin-top:15px;
+
+    color:var(--primary-light);
+
+    font-size:.95rem;
+
+}
+
+/*==================================================
+        COMMON RESULT CARDS
+==================================================*/
+
+.status-card,
+.summary-card,
+.image-card{
+
+    background:var(--glass);
+
+    backdrop-filter:blur(var(--blur));
+
+    -webkit-backdrop-filter:blur(var(--blur));
+
+    border:1px solid var(--glass-border);
+
+    box-shadow:
+        var(--glass-shadow),
+        inset 0 1px 0 var(--glass-highlight);
+
+}
+
+.status-card:hover,
+.summary-card:hover,
+.image-card:hover{
+
+    border-color:var(--glass-border-hover);
+
+    box-shadow:
+        var(--primary-glow),
+        0 20px 45px rgba(0,0,0,.35);
+
+}

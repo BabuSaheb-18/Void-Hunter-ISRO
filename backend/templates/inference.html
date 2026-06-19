@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>🚀 Begin Analysis</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base/variables.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base/reset.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout/background.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout/navbar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout/hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/cards.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/upload.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/result.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout/footer.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base/animations.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  </head>
+
+  <body>
+    <!-- ========================= -->
+    <!-- BACKGROUND -->
+    <!-- ========================= -->
+
+    <div class="space-bg"></div>
+
+    <div class="background-grid"></div>
+
+    <div id="particles"></div>
+    <img src="{{ url_for('static', filename='image/satellite.png') }}"
+     class="floating-satellite inference-satellite"
+     alt="Satellite">
+
+<img src="{{ url_for('static', filename='image/astronaut.png') }}"
+     class="floating-astronaut inference-astronaut"
+     alt="Astronaut">
+   
+    <!-- ========================= -->
+    <!-- NAVIGATION -->
+    <!-- ========================= -->
+
+    <nav class="navbar">
+      <div class="logo">🪐 Surface Analysis System</div>
+
+      <div class="nav-links">
+        <a href="/"> 🛰 Mission Overview </a>
+
+        <a href="/pipeline"> ⚙ Processing Pipeline </a>
+
+        <a href="/inference" class="active-nav"> 🚀 Begin Analysis </a>
+      </div>
+    </nav>
+
+    <!-- ========================= -->
+    <!-- HERO -->
+    <!-- ========================= -->
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="glass-card result-action-card1">
+          <h1>AI Image Inference</h1>
+
+          <h2>Infrared Image Enhancement & RGB Reconstruction</h2>
+
+          <p>
+            Upload an infrared satellite image to generate a high-quality RGB
+            reconstruction using our deep learning model.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- UPLOAD -->
+    <!-- ========================= -->
+
+    <section class="upload-section">
+      <div class="glass-card upload-container">
+        <h2>
+          <u>Upload Infrared Image</u>
+        </h2>
+
+        <p>Select an infrared satellite image and start AI inference.</p>
+
+        <form action="/upload" method="POST" enctype="multipart/form-data">
+          <label for="image" class="upload-area">
+            <div class="upload-icon">📁</div>
+
+            <h3>Click to Choose Image</h3>
+
+            <span id="fileName"> No file selected </span>
+          </label>
+
+          <input
+            type="file"
+            id="image"
+            name="image"
+            accept="image/*"
+            hidden
+            required
+          />
+
+          <button type="submit" class="upload-btn">Run AI Inference</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- ========================= -->
+    <!-- FOOTER -->
+    <!-- ========================= -->
+
+    <footer>
+      <div class="footer-box">
+        <div class="footer-title">TEAM VOID HUNTER</div>
+
+        <div class="footer-sub">Developed for ISRO Hackathon 2026</div>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

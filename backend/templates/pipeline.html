@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>⚙ Processing Pipeline</title>
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base/variables.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base/reset.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout/background.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout/navbar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout/hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/cards.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/upload.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/result.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout/footer.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base/animations.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  </head>
+
+  <body>
+    <!-- ===========================
+SPACE BACKGROUND
+============================ -->
+
+    <div class="space-bg"></div>
+
+    <div class="background-grid"></div>
+
+    <div id="particles"></div>
+    <img src="{{ url_for('static', filename='image/satellite.png') }}"
+     class="floating-satellite pipeline-satellite"
+     alt="Satellite">
+
+<img src="{{ url_for('static', filename='image/astronaut.png') }}"
+     class="floating-astronaut pipeline-astronaut"
+     alt="Astronaut">
+
+
+    <!-- ===========================
+NAVIGATION
+============================ -->
+
+    <nav class="navbar">
+      <div class="logo">🪐 Surface Analysis System</div>
+
+      <div class="nav-links">
+        <a href="/"> 🛰 Mission Overview </a>
+
+        <a href="/pipeline" class="active-nav"> ⚙ Processing Pipeline</a>
+
+        <a href="/inference"> 🚀 Begin Analysis</a>
+      </div>
+    </nav>
+
+    <!-- ===========================
+HERO
+============================ -->
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="glass-card result-action-card1">
+          <h1>AI Processing Pipeline</h1>
+
+          <div class="divider"></div>
+
+          <h2>From Infrared Imagery to High-Fidelity RGB Reconstruction</h2>
+
+          <p>
+            Our end-to-end deep learning pipeline enhances low-quality infrared
+            satellite imagery through pre-processing, super-resolution, semantic
+            feature learning and image-to-image translation. The final output is
+            a visually interpretable RGB image while preserving object
+            structure, spatial information and scientific reliability required
+            for satellite analysis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===========================
+PROCESSING PIPELINE
+============================ -->
+
+    <section>
+      <h2 class="section-title">
+        <u>AI Processing Pipeline</u>
+      </h2>
+
+      <div class="pipeline">
+        <div class="glass-card pipeline-box">
+          <h3>1. Infrared Image Input</h3>
+
+          <p>
+            Acquire raw infrared satellite imagery from Landsat 8 / 9 thermal
+            bands.
+          </p>
+        </div>
+
+        <div class="pipeline-arrow">↓</div>
+
+        <div class="glass-card pipeline-box">
+          <h3>2. Image Pre-processing</h3>
+
+          <p>
+            Normalization, denoising, contrast enhancement and data preparation.
+          </p>
+        </div>
+
+        <div class="pipeline-arrow">↓</div>
+
+        <div class="glass-card pipeline-box">
+          <h3>3. Super Resolution</h3>
+
+          <p>Recover spatial information and enhance image clarity.</p>
+        </div>
+
+        <div class="pipeline-arrow">↓</div>
+
+        <div class="glass-card pipeline-box">
+          <h3>4. Feature Extraction</h3>
+
+          <p>
+            Deep feature learning extracts edges, textures and semantic
+            information required for accurate color reconstruction.
+          </p>
+        </div>
+
+        <div class="pipeline-arrow">↓</div>
+
+        <div class="glass-card pipeline-box">
+          <h3>5. U-Net Generator</h3>
+
+          <p>
+            The encoder-decoder architecture captures multi-scale information
+            using skip connections to preserve fine image details.
+          </p>
+        </div>
+
+        <div class="pipeline-arrow">↓</div>
+
+        <div class="glass-card pipeline-box">
+          <h3>6. Pix2Pix Refinement</h3>
+
+          <p>
+            The GAN discriminator improves realism and refines generated RGB
+            images while reducing artifacts.
+          </p>
+        </div>
+
+        <div class="pipeline-arrow">↓</div>
+
+        <div class="glass-card pipeline-box">
+          <h3>7. RGB Reconstruction</h3>
+
+          <p>
+            Generate realistic visible-spectrum images while maintaining
+            structural integrity and scene consistency.
+          </p>
+        </div>
+
+        <div class="pipeline-arrow">↓</div>
+
+        <div class="glass-card pipeline-box">
+          <h3>8. Quality Evaluation</h3>
+
+          <p>
+            Evaluate the reconstructed image using PSNR, SSIM and FID metrics to
+            ensure reconstruction quality.
+          </p>
+        </div>
+
+        <div class="pipeline-arrow">↓</div>
+
+        <div class="glass-card pipeline-box">
+          <h3>Final Enhanced Output</h3>
+
+          <p>
+            High-Fidelity RGB Satellite Image ready for visualization,
+            interpretation and analysis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================== -->
+    <!-- PIPELINE COMPONENTS -->
+    <!-- ===================================== -->
+
+    <section>
+      <h2 class="section-title">
+        <u>Pipeline Components</u>
+      </h2>
+
+      <div class="feature-grid">
+        <div class="glass-card feature-card">
+          <h3>Input Processing</h3>
+
+          <p>
+            Load infrared satellite imagery, normalize pixel values and prepare
+            the dataset for neural network processing.
+          </p>
+        </div>
+
+        <div class="glass-card feature-card">
+          <h3>Image Enhancement</h3>
+
+          <p>
+            Enhance contrast, suppress noise and recover important details from
+            infrared imagery.
+          </p>
+        </div>
+
+        <div class="glass-card feature-card">
+          <h3>Deep Learning</h3>
+
+          <p>
+            U-Net extracts semantic features while Pix2Pix refines image quality
+            and color realism.
+          </p>
+        </div>
+
+        <div class="glass-card feature-card">
+          <h3>RGB Reconstruction</h3>
+
+          <p>
+            Produce visually interpretable RGB satellite images while preserving
+            object structures.
+          </p>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="footer-box">
+        <div class="footer-title">TEAM VOID HUNTER</div>
+
+        <div class="footer-sub">Developed for ISRO Hackathon 2026</div>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

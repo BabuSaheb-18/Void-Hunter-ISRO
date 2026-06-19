@@ -1,0 +1,457 @@
+/*==================================================
+                RESULT PAGE
+==================================================*/
+
+/* ==========================================
+   COMPARISON GRID
+========================================== */
+
+.comparison-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(450px,1fr));
+
+    gap:35px;
+
+    max-width:1500px;
+
+    margin:auto;
+
+}
+
+/* ==========================================
+   SUMMARY GRID
+========================================== */
+
+.summary-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+
+    gap:25px;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+/* ==========================================
+   ACTION BUTTONS
+========================================== */
+
+/* ==========================================
+   ACTION BUTTONS
+========================================== */
+
+.action-buttons{
+
+    margin-top:70px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-wrap:wrap;
+
+    gap:35px;
+
+}
+
+/* ==========================================
+   COMMON ACTION BUTTON
+========================================== */
+
+/* ==========================================
+   BUTTON
+========================================== */
+
+.action-btn{
+
+    width:320px;
+
+    height:72px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    gap:12px;
+
+    border-radius:18px;
+
+    text-decoration:none;
+
+    font-size:1.15rem;
+
+    font-weight:700;
+
+    letter-spacing:.4px;
+
+    transition:.35s ease;
+
+}
+
+/* ==========================================
+   PRIMARY BUTTON
+========================================== */
+
+.primary-btn{
+
+    background:linear-gradient(
+        135deg,
+        #24c6ff,
+        #0072ff
+    );
+
+    color:#fff;
+
+    box-shadow:0 12px 35px rgba(0,140,255,.35);
+
+}
+
+.primary-btn:hover{
+
+    transform:translateY(-8px) scale(1.04);
+
+    box-shadow:0 20px 45px rgba(0,140,255,.5);
+
+}
+
+/* ==========================================
+   SECONDARY BUTTON
+========================================== */
+
+.secondary-btn{
+
+    background:rgba(255,255,255,.08);
+
+    color:#fff;
+
+    border:1px solid rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+}
+
+.secondary-btn:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#3ab8ff;
+
+    background:rgba(58,184,255,.12);
+
+}
+/* ==========================================
+   RESULT HERO
+========================================== */
+
+.hero-card h1{
+
+    margin-bottom:20px;
+
+}
+
+.hero-card h2{
+
+    margin-bottom:20px;
+
+}
+
+.hero-card p{
+
+    max-width:850px;
+
+    margin:auto;
+
+}
+
+/* ==========================================
+   RESULT ACTION CARD
+========================================== */
+
+.result-action-card{
+
+    width:100%;
+
+    max-width:650px;
+
+    margin:auto;
+
+    padding:55px 60px;
+
+    text-align:center;
+
+    line-height:3;
+
+}
+
+.result-action-card.large{
+
+    max-width:950px;
+
+    line-height:1.5;
+
+}
+/*==================================================
+            ANALYSIS REPORT
+==================================================*/
+
+.analysis-section,
+.processing-section{
+
+    padding-top:80px;
+
+}
+
+/* ==========================================
+   ANALYSIS CARD
+========================================== */
+
+.analysis-card{
+
+    width:100%;
+
+    max-width:950px;
+
+    margin:auto;
+
+    padding:45px 50px;
+
+}
+
+/* ==========================================
+   HEADER
+========================================== */
+
+.analysis-header{
+
+    text-align:center;
+
+    margin-bottom:45px;
+
+}
+
+.analysis-header h3{
+
+    font-size:2rem;
+
+    color:var(--primary);
+
+    margin-bottom:15px;
+
+    letter-spacing:.5px;
+
+}
+
+.analysis-header p{
+
+    max-width:700px;
+
+    margin:auto;
+
+    line-height:1.9;
+
+    color:var(--text-light);
+
+}
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.analysis-table{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:8px;
+
+    width:100%;
+
+}
+
+/* ==========================================
+   ROW
+========================================== */
+
+.metric-row{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:20px;
+
+    padding:18px 0;
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    transition:var(--transition);
+
+}
+
+.metric-row:last-child{
+
+    border-bottom:none;
+
+}
+
+.metric-row:hover{
+
+    padding-left:10px;
+
+    padding-right:10px;
+
+    background:rgba(77,183,255,.05);
+
+    border-radius:14px;
+
+}
+
+/* ==========================================
+   METRIC NAME
+========================================== */
+
+.metric-name{
+
+    flex:1;
+
+    color:var(--text-light);
+
+    font-size:1.02rem;
+
+    font-weight:500;
+
+}
+
+/* ==========================================
+   METRIC VALUE
+========================================== */
+
+.metric-value{
+
+    flex:1;
+
+    text-align:right;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    word-break:break-word;
+
+}
+
+
+/* ==========================================
+   STATUS COLORS
+========================================== */
+
+.metric-value.pending{
+
+    color:#ffc857;
+
+}
+
+.metric-value.success{
+
+    color:#43ff99;
+
+}
+
+.metric-value.error{
+
+    color:#ff6b6b;
+
+}
+/* ==========================================
+   METRIC STATUS
+========================================== */
+
+.metric-success{
+
+    color:#43ff99;
+
+    font-weight:700;
+
+}
+
+.metric-na{
+
+    color:#ffc857;
+
+    font-weight:700;
+
+}
+
+.metric-error{
+
+    color:#ff6b6b;
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================
+   METRIC EMPHASIS
+========================================== */
+
+.metric-value strong{
+
+    color:var(--heading);
+
+    font-weight:700;
+
+}
+
+
+/* ==========================================
+   LONG VALUE SUPPORT
+========================================== */
+
+.metric-value{
+
+    overflow-wrap:anywhere;
+
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .metric-row{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+
+    }
+
+    .metric-value{
+
+        text-align:left;
+
+        width:100%;
+
+    }
+
+}

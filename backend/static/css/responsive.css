@@ -1,0 +1,311 @@
+/*==================================================
+                RESPONSIVE
+==================================================*/
+
+/* ==========================================
+   LARGE DEVICES
+========================================== */
+
+@media (max-width:1200px){
+
+    .hero h1{
+        font-size:3.8rem;
+    }
+
+    .hero h2{
+        font-size:1.9rem;
+    }
+
+    .hero-card{
+        padding:70px 55px;
+    }
+
+    .feature-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* ==========================================
+   TABLETS
+========================================== */
+
+@media (max-width:992px){
+
+    .navbar{
+        padding:0 5%;
+    }
+
+    .logo{
+        font-size:1.5rem;
+    }
+
+    .nav-links{
+        gap:25px;
+    }
+
+    .hero{
+        padding:140px 30px 80px;
+    }
+
+    .hero h1{
+        font-size:3rem;
+    }
+
+    .hero h2{
+        font-size:1.7rem;
+    }
+
+    .hero p{
+        font-size:1rem;
+    }
+
+    .section-title{
+        font-size:2.5rem;
+    }
+
+    .feature-grid,
+    .tech-grid,
+    .comparison-grid,
+    .summary-grid{
+
+        gap:25px;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    /* Navbar */
+
+    .navbar{
+
+        height:auto;
+
+        flex-direction:column;
+
+        padding:20px;
+
+    }
+
+    .logo{
+
+        margin-bottom:18px;
+
+        text-align:center;
+
+    }
+
+    .nav-links{
+
+        flex-wrap:wrap;
+
+        justify-content:center;
+
+        gap:18px;
+
+    }
+
+    /* Hero */
+
+    .hero{
+
+        padding-top:180px;
+
+    }
+
+    .hero-card{
+
+        padding:50px 30px;
+
+    }
+
+    .hero h1{
+
+        font-size:2.4rem;
+
+        letter-spacing:-1px;
+
+    }
+
+    .hero h2{
+
+        font-size:1.3rem;
+
+    }
+
+    /* Titles */
+
+    .section-title{
+
+        font-size:2rem;
+
+    }
+
+    /* Grid */
+
+    .feature-grid,
+    .comparison-grid,
+    .summary-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .tech-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    /* Cards */
+
+    .feature-card,
+    .tech-card{
+
+        min-height:auto;
+
+        padding:35px 25px;
+
+    }
+
+    /* Upload */
+
+    .upload-container{
+
+        padding:40px 25px;
+
+    }
+
+    .upload-area{
+
+        padding:40px 25px;
+
+    }
+
+    /* Buttons */
+
+    .action-buttons{
+
+        flex-direction:column;
+
+    }
+
+    .upload-btn,
+    .action-btn{
+
+        width:100%;
+
+        max-width:320px;
+
+    }
+
+    /* Footer */
+
+    .footer-box{
+
+        padding:35px 25px;
+
+    }
+
+    .footer-title{
+
+        font-size:1.5rem;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width:500px){
+
+    .space-bg{
+
+        background-position:center top;
+
+    }
+
+    .hero h1{
+
+        font-size:2rem;
+
+    }
+
+    .hero h2{
+
+        font-size:1.1rem;
+
+    }
+
+    .hero p{
+
+        font-size:.95rem;
+
+    }
+
+    .logo{
+
+        font-size:1.25rem;
+
+    }
+
+    .nav-links a{
+
+        font-size:.95rem;
+
+    }
+
+    .section-title{
+
+        font-size:1.8rem;
+
+    }
+
+    .feature-card h3{
+
+        font-size:1.3rem;
+
+    }
+
+    .tech-card{
+
+        font-size:1.15rem;
+
+    }
+
+}
+@media (max-width:768px){
+
+    .analysis-card{
+
+        padding:30px 25px;
+
+    }
+
+    .metric-row{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:10px;
+
+    }
+
+    .metric-value{
+
+        text-align:left;
+
+        min-width:unset;
+
+    }
+
+}

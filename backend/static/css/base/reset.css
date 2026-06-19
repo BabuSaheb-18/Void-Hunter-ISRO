@@ -1,0 +1,140 @@
+/*==================================================
+                RESET & GLOBAL
+==================================================*/
+
+/* ==========================================
+   RESET
+========================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+html,
+body{
+    width:100%;
+    min-height:100%;
+    overflow-x:hidden;
+}
+
+/* ==========================================
+   BODY
+========================================== */
+
+body{
+
+    font-family:"Segoe UI",Tahoma,Geneva,Verdana,sans-serif;
+
+    background:var(--bg);
+
+    color:var(--text);
+
+    overflow-x:hidden;
+
+    position:relative;
+
+}
+
+/* ==========================================
+   COMMON ELEMENTS
+========================================== */
+
+section{
+
+    position:relative;
+
+    z-index:5;
+
+    padding:50px 8%;
+
+}
+
+.hero,
+footer{
+
+    position:relative;
+
+    z-index:5;
+
+}
+
+/* ==========================================
+   SECTION TITLE
+========================================== */
+
+.section-title{
+
+    font-size:3rem;
+
+    font-weight:700;
+
+    color:var(--primary);
+
+    text-align:center;
+
+    letter-spacing:.5px;
+
+    margin-bottom:70px;
+
+    text-shadow:0 0 18px var(--primary-glow);
+
+}
+
+/* ==========================================
+   LINKS & BUTTONS
+========================================== */
+
+a,
+button{
+
+    transition:var(--transition);
+
+}
+
+/* ==========================================
+   SCROLLBAR
+========================================== */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:var(--bg-secondary);
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:var(--scroll);
+
+    border-radius:50px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:var(--primary);
+
+}
+
+/* ==========================================
+   TEXT SELECTION
+========================================== */
+
+::selection{
+
+    background:var(--primary);
+
+    color:var(--heading);
+
+}

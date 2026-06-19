@@ -1,0 +1,209 @@
+/*==================================================
+            SPACE BACKGROUND
+==================================================*/
+
+/* ==========================================
+   EARTH BACKGROUND
+========================================== */
+
+.space-bg {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: -100;
+
+  background-image: url("../../image/earth.png");
+
+  background-size: cover;
+
+  background-repeat: no-repeat;
+
+  background-position: center -0px;
+}
+
+/* ==========================================
+   DARK OVERLAY
+========================================== */
+
+.space-bg::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.42),
+    rgba(0, 0, 0, 0.55)
+  );
+}
+
+/* ==========================================
+   GRID OVERLAY
+========================================== */
+
+.background-grid {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: -90;
+
+  background:
+    linear-gradient(rgba(77, 183, 255, 0.025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(77, 183, 255, 0.025) 1px, transparent 1px);
+
+  background-size: 90px 90px;
+}
+
+/* ==========================================
+   PARTICLES
+========================================== */
+
+#particles {
+  position: fixed;
+
+  inset: 0;
+
+  overflow: hidden;
+
+  pointer-events: none;
+
+  z-index: -60;
+}
+
+.particle {
+  position: absolute;
+
+  width: 10px;
+
+  height: 10px;
+
+  border-radius: 50%;
+
+  background: var(--primary-light);
+
+  box-shadow: 0 0 8px var(--primary-light);
+
+  animation: floatParticle 12s linear infinite;
+}
+
+/* ==========================================
+   PARTICLE ANIMATION
+========================================== */
+
+@keyframes floatParticle {
+  from {
+    transform: translateY(110vh);
+
+    opacity: 0.2;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  to {
+    transform: translateY(-120vh);
+
+    opacity: 0;
+  }
+}
+/* ==========================================
+   FLOATING SPACE OBJECTS
+========================================== */
+
+.floating-satellite {
+  position: fixed;
+
+  top: 12%;
+
+  left: -20px;
+  top: 180px;
+
+  width: 260px;
+  transform: rotate(-18deg);
+
+  width: 380px;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  animation:
+    satelliteFloat 10s ease-in-out infinite,
+    satelliteRotate 35s linear infinite;
+
+  filter: drop-shadow(0 0 20px rgba(90, 170, 255, 0.45));
+}
+
+.floating-astronaut {
+  position: fixed;
+
+  right: -20px;
+
+  right: 60px;
+
+  top: 420px;
+
+  width: 220px;
+
+  transform: rotate(18deg);
+
+  width: 300px;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  animation: astronautFloat 7s ease-in-out infinite;
+
+  filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+}
+
+@keyframes satelliteFloat {
+  0% {
+    transform: translateY(0) rotate(-5deg);
+  }
+
+  50% {
+    transform: translateY(-25px) rotate(5deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(-5deg);
+  }
+}
+@keyframes satelliteRotate {
+  from {
+    transform: rotate(-18deg);
+  }
+
+  to {
+    transform: rotate(342deg);
+  }
+}
+@keyframes astronautFloat {
+  0% {
+    transform: translateY(0) rotate(6deg);
+  }
+
+  50% {
+    transform: translateY(-18px) rotate(-6deg);
+  }
+
+  100% {
+    transform: translateY(0) rotate(6deg);
+  }
+}
+.space-bg,
+.background-grid,
+#particles,
+.floating-satellite,
+.floating-astronaut {
+  position: fixed;
+}

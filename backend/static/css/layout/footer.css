@@ -1,0 +1,120 @@
+/*==================================================
+                FOOTER
+==================================================*/
+
+/* ==========================================
+   FOOTER
+========================================== */
+
+footer{
+
+    padding:120px 8% 70px;
+
+    text-align:center;
+
+}
+
+/* ==========================================
+   FOOTER BOX
+========================================== */
+
+.footer-box{
+
+    position:relative;
+
+    width:100%;
+
+    max-width:500px;
+
+    margin:auto;
+
+    padding:40px 35px;
+
+    overflow:hidden;
+
+    border-radius:var(--radius-lg);
+
+    background:linear-gradient(
+        145deg,
+        rgba(255,255,255,.08),
+        rgba(255,255,255,.015)
+    );
+
+    border:1px solid var(--glass-border);
+
+    backdrop-filter:blur(var(--blur-lg));
+
+    -webkit-backdrop-filter:blur(var(--blur-lg));
+
+    box-shadow:
+        var(--card-shadow),
+        inset 0 1px 0 var(--glass-highlight-2),
+        inset 0 -25px 45px rgba(0,0,0,.18);
+
+}
+
+/* ==========================================
+   LIGHT EFFECT
+========================================== */
+
+.footer-box::before{
+
+    content:"";
+
+    position:absolute;
+
+    top:-60%;
+
+    left:-30%;
+
+    width:180%;
+
+    height:180%;
+
+    background:radial-gradient(
+        circle,
+        rgba(255,255,255,.12),
+        transparent 70%
+    );
+
+    transform:rotate(20deg);
+
+    pointer-events:none;
+
+}
+
+/* ==========================================
+   FOOTER TITLE
+========================================== */
+
+.footer-title{
+
+    color:var(--primary);
+
+    font-size:2rem;
+
+    font-weight:700;
+
+    letter-spacing:4px;
+
+    text-transform:uppercase;
+
+    margin-bottom:18px;
+
+}
+
+/* ==========================================
+   FOOTER SUBTITLE
+========================================== */
+
+.footer-sub{
+
+    color:var(--paragraph);
+
+    font-size:1.05rem;
+
+    line-height:1.8;
+
+    letter-spacing:1px;
+
+}

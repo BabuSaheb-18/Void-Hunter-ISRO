@@ -1,0 +1,158 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>🛰 Mission Overview</title>
+
+   <link rel="stylesheet" href="{{ url_for('static', filename='css/base/variables.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base/reset.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout/background.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout/navbar.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout/hero.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/cards.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/upload.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/components/result.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/layout/footer.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/base/animations.css') }}">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  </head>
+
+  <body>
+    <!-- Fixed Space Background -->
+    <div class="space-bg"></div>
+
+    <!-- Grid Overlay -->
+    <div class="background-grid"></div>
+
+    <!-- Particles -->
+    <div id="particles"></div>
+    <img src="{{ url_for('static', filename='image/satellite.png') }}"
+     class="floating-satellite overview-satellite"
+     alt="Satellite">
+
+<img src="{{ url_for('static', filename='image/astronaut.png') }}"
+     class="floating-astronaut overview-astronaut"
+     alt="Astronaut">
+
+
+    <!-- Navigation -->
+    <nav class="navbar">
+      <div class="logo">🪐 Surface Analysis System</div>
+
+      <div class="nav-links">
+        <a href="/" class="active-nav"> 🛰 Mission Overview</a>
+
+        <a href="/pipeline"> ⚙ Processing Pipeline </a>
+
+        <a href="/inference">🚀 Begin Analysis</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+
+    <section class="hero">
+      <div class="hero-content">
+        <div class="glass-card result-action-card1">
+          <h1>Infrared Image Colorization & Enhancement</h1>
+
+          <h2>for Improved Object Interpretation</h2>
+
+          <p>
+            Transforming low-visibility infrared satellite imagery into
+            high-fidelity RGB reconstructions using deep learning.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Objectives -->
+
+    <section>
+      <h2 class="section-title">
+        <u>Core Objectives</u>
+      </h2>
+
+      <div class="feature-grid">
+        <div class="glass-card feature-card">
+          <h3>Enhancement</h3>
+
+          <p>Improve visibility of faint edges, textures and structures.</p>
+        </div>
+
+        <div class="glass-card feature-card">
+          <h3>Super Resolution</h3>
+
+          <p>Recover fine spatial details from low quality infrared imagery.</p>
+        </div>
+
+        <div class="glass-card feature-card">
+          <h3>RGB Reconstruction</h3>
+
+          <p>
+            Generate realistic visible-spectrum imagery from infrared inputs.
+          </p>
+        </div>
+
+        <div class="glass-card feature-card">
+          <h3>Semantic Integrity</h3>
+
+          <p>Preserve object structure and prevent false interpretations.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Technical Overview -->
+
+    <section>
+      <h2 class="section-title">
+        <u>Technical Overview</u>
+      </h2>
+
+      <div class="tech-grid">
+        <div class="glass-card tech-card">
+          <u>Dataset</u>
+          <span>Landsat 8 / 9</span>
+        </div>
+
+        <div class="glass-card tech-card">
+          <u>Architecture</u>
+          <span>U-Net + Pix2Pix</span>
+        </div>
+
+        <div class="glass-card tech-card">
+          <u>Input</u>
+          <span>Infrared Satellite Image</span>
+        </div>
+
+        <div class="glass-card tech-card">
+         <u> Output</u>
+          <span>High Fidelity RGB Image</span>
+        </div>
+
+        <div class="glass-card tech-card">
+         <u> Evaluation</u>
+          <span>PSNR • SSIM • FID</span>
+        </div>
+
+        <div class="glass-card tech-card">
+          <u>Deployment</u>
+          <span>Flask Web Application</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+
+    <footer>
+      <div class="footer-box">
+        <div class="footer-title">TEAM VOID HUNTER</div>
+
+        <div class="footer-sub">Developed for ISRO Hackathon 2026</div>
+      </div>
+    </footer>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>
