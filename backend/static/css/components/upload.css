@@ -1,0 +1,91 @@
+/*==================================================
+            VHNet MISSION UPLOAD MODULE
+==================================================*/
+
+/*==================================================
+            VHNet MISSION UPLOAD MODULE
+==================================================*/
+
+.upload-section {
+    min-height: 60vh; /* Compact height */
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;     /* Centers vertically */
+    padding: 40px 5%;
+    width: 100%;             /* Added missing semicolon */
+}
+
+.upload-container {
+    width: 100%;
+    max-width: 750px; /* Perfectly sized for a central focus */
+    padding: 40px;
+    text-align: center;
+    background: rgba(7, 18, 30, 0.4); /* Glass base */
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow);
+}
+
+.upload-container h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+.upload-container p {
+    margin-bottom: 30px;
+    color: var(--paragraph);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+/* ==========================================
+   UPLOAD DROP ZONE
+========================================== */
+.upload-area {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    border: 2px dashed var(--primary-border);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.02);
+    transition: var(--transition);
+}
+
+.upload-area:hover {
+    background: var(--hover-bg);
+    border-color: var(--primary);
+    transform: scale(1.02);
+}
+
+.upload-icon {
+    font-size: 3.5rem; /* Balanced size */
+    margin-bottom: 15px;
+    color: var(--primary);
+    display: block;
+}
+
+/* ==========================================
+   SUBMISSION BUTTON
+========================================== */
+.upload-btn {
+    margin-top: 30px;
+    padding: 15px 40px;
+    border: none;
+    border-radius: var(--radius-xl);
+    cursor: pointer;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--heading);
+    background: var(--btn-gradient);
+    transition: var(--transition);
+}
+
+.upload-btn:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--primary-shadow);
+}

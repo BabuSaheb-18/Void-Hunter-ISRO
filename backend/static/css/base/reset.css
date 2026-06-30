@@ -1,0 +1,87 @@
+/*==================================================
+            VHNet GLOBAL RESET & BASE
+==================================================*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: 16px; /* Explicit base size */
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    overflow-x: hidden;
+    position: relative;
+    line-height: 1.6;
+}
+
+/* ==========================================
+   GLOBAL LAYOUT ELEMENTS
+========================================== */
+section {
+    position: relative;
+    z-index: 5;
+    padding: 80px 7%; /* Standardized padding for balance */
+}
+
+/* Section Header Typography */
+.section-title {
+    font-size: 3rem;
+    font-weight: 700;
+    color: var(--heading);
+    text-align: center;
+    margin-bottom: 60px;
+    letter-spacing: 1px;
+}
+
+.section-title u {
+    color: var(--primary);
+    text-decoration: none;
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 10px;
+    text-shadow: 0 0 15px var(--primary-glow);
+}
+
+/* ==========================================
+   SCROLLBAR (Branded to VHNet)
+========================================== */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--scroll);
+    border-radius: var(--radius-xl);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary);
+    box-shadow: 0 0 10px var(--primary-glow);
+}
+
+/* ==========================================
+   SELECTION STYLE (Consistency)
+========================================== */
+::selection {
+    background: var(--primary);
+    color: var(--bg);
+}
+
+/* Ensure images don't overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}

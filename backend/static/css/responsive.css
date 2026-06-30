@@ -1,0 +1,62 @@
+/*==================================================
+            VHNet RESPONSIVE ARCHITECTURE
+==================================================*/
+
+/* --- LARGE SCREENS --- */
+@media (max-width: 1200px) {
+    .hero h1 { font-size: 3.5rem; }
+    .hero h2 { font-size: 1.75rem; }
+    .feature-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* --- TABLETS --- */
+@media (max-width: 992px) {
+    .navbar { padding: 0 5%; }
+    .hero { padding: 120px 30px 60px; }
+    
+    .hero h1 { font-size: 2.8rem; }
+    .hero p { font-size: 1rem; }
+    
+    .section-title { font-size: 2.2rem; }
+    
+    /* Ensure grids collapse predictably */
+    .feature-grid, .tech-grid, .comparison-grid { gap: 20px; }
+}
+
+/* --- MOBILE & PORTRAIT TABLETS --- */
+@media (max-width: 768px) {
+    /* Navbar: Stack for mobile */
+    .navbar { height: auto; flex-direction: column; padding: 20px; }
+    .nav-links { flex-wrap: wrap; justify-content: center; gap: 15px; }
+
+    /* Hero: Reduce padding for smaller viewports */
+    .hero { padding-top: 150px; }
+    .hero h1 { font-size: 2.2rem; }
+
+    /* Grids: Force single column layout */
+    .feature-grid, .tech-grid, .comparison-grid { grid-template-columns: 1fr; }
+
+    /* Analysis Metrics: Stack row to column */
+    .metric-row { 
+        flex-direction: column; 
+        align-items: flex-start; 
+        gap: 8px; 
+    }
+    
+    /* Buttons */
+    .action-buttons { flex-direction: column; }
+    .action-btn { width: 100%; max-width: 100%; }
+}
+
+/* --- COMPACT MOBILE --- */
+@media (max-width: 480px) {
+    .hero h1 { font-size: 1.8rem; }
+    .section-title { font-size: 1.6rem; }
+    
+    .logo { font-size: 1.1rem; }
+    .nav-links a { font-size: 0.9rem; }
+    
+    /* Ensure padding doesn't push off-screen */
+    section { padding: 50px 5%; }
+    .footer-box { padding: 25px 20px; }
+}

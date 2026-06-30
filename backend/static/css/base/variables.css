@@ -1,0 +1,67 @@
+/*==================================================
+            VHNet SYSTEM DESIGN TOKENS
+==================================================*/
+
+:root {
+    /* --- COLOR PALETTE --- */
+    --primary: #4db7ff;
+    --primary-light: #6ddcff;
+    --primary-dark: #2189ff;
+
+    --success: #43ff99;
+    --warning: #ffc857;
+    --danger: #ff6464;
+
+    /* --- BACKGROUND HIERARCHY --- */
+    --bg: #01060f;
+    --bg-secondary: #07121e;
+    --bg-tertiary: #0d1b2a;
+
+    /* --- TYPOGRAPHY --- */
+    --heading: #ffffff;
+    --text: #eef4fb;
+    --text-light: #c8d5e4;
+    --paragraph: #cbd5e1; /* Replaced 'wheat' for better technical contrast */
+
+    /* --- GLASS MORPHISM SYSTEM --- */
+    --glass: rgba(7, 18, 30, 0.45);
+    --glass-dark: rgba(12, 28, 45, 0.60);
+    
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-border-hover: rgba(77, 183, 255, 0.4);
+
+    --glass-highlight: rgba(255, 255, 255, 0.06);
+    --glass-highlight-2: rgba(255, 255, 255, 0.18);
+
+    /* --- EFFECTS & GLOWS --- */
+    --primary-glow: rgba(77, 183, 255, 0.18);
+    --primary-shadow: rgba(77, 183, 255, 0.28);
+    --success-glow: rgba(67, 255, 153, 0.25);
+    --hover-bg: rgba(77, 183, 255, 0.08);
+    --shadow: rgba(0, 0, 0, 0.45);
+
+    /* --- INTERACTIVE COMPONENTS --- */
+    --btn-gradient: linear-gradient(135deg, var(--primary-dark), var(--primary-light));
+    --primary-border: rgba(77, 183, 255, 0.35);
+
+    /* --- DEPTH & SHADOWS --- */
+    --card-shadow: 0 25px 60px rgba(0, 0, 0, 0.5);
+    --glass-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    --hover-shadow: 0 40px 80px rgba(0, 0, 0, 0.5), 0 0 35px rgba(77, 183, 255, 0.25);
+
+    /* --- DIMENSIONS & RADIUS --- */
+    --radius-sm: 16px;
+    --radius: 24px;
+    --radius-lg: 32px;
+    --radius-xl: 50px;
+
+    /* --- FILTERS & MOTION --- */
+    --blur: 20px;
+    --blur-lg: 35px;
+    --transition: 0.35s ease;
+    --transition-fast: 0.2s ease;
+    --transition-slow: 0.6s ease;
+
+    /* --- UTILITIES --- */
+    --scroll: #295b88;
+}

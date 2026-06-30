@@ -1,0 +1,27 @@
+# ==========================================================
+# VHNet v1
+# ISRO Hackathon 2026
+# ==========================================================
+
+Flask>=3.1.0
+
+numpy>=2.2.0
+opencv-python>=4.11.0
+Pillow>=11.3.0
+matplotlib>=3.10.0
+scikit-image>=0.25.0
+scikit-learn>=1.7.0
+rasterio>=1.4.3
+albumentations>=2.0.8
+tqdm>=4.67.1
+
+torch>=2.7.1
+torchvision>=0.22.1
+torchaudio>=2.7.1
+
+lpips>=0.1.4
+
+reportlab>=4.4.2
+rasterio
+tqdm
+pytorch-msssim

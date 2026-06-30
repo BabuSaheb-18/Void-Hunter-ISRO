@@ -1,0 +1,106 @@
+/*==================================================
+            VHNet MISSION CONTROL HERO
+==================================================*/
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center; /* Horizontally centers content */
+    align-items: center;     /* Vertically centers content */
+    padding: 0 5%;
+}
+
+.hero-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* Forces items inside to center */
+    width: 100%;
+    max-width: 900px;
+}
+
+/* Hero Card - Integration with global glass system */
+.hero-card {
+    position: relative;
+    padding: 60px 50px;
+    text-align: center;
+    border-radius: var(--radius-lg);
+    animation: float 8s ease-in-out infinite;
+    z-index: 1;
+}
+
+/* Atmospheric Glow Effect behind hero card */
+.hero-card::after {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    background: radial-gradient(circle, var(--primary-glow), transparent 60%);
+    filter: blur(80px);
+    z-index: -1;
+}
+
+/* Typography Refinement */
+.hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
+    letter-spacing: -1px;
+    color: var(--heading);
+    margin-bottom: 20px;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero h2 {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-weight: 500;
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    text-align: center;
+    line-height: 1.8;
+    color: var(--text-light);
+}
+
+/* Decorative Divider */
+.divider {
+    width: 100px;
+    height: 3px;
+    margin: 30px auto;
+    border-radius: 50px;
+    background: linear-gradient(90deg, transparent, var(--primary), transparent);
+    box-shadow: 0 0 15px var(--primary-shadow);
+}
+
+/*==================================================
+            PIPELINE FLOW VISUALS
+==================================================*/
+
+.pipeline {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px; /* Tighter spacing for better visual rhythm */
+}
+
+.pipeline-box {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+}
+
+.pipeline-arrow {
+    font-size: 2rem;
+    color: var(--primary);
+    text-shadow: 0 0 15px var(--primary-shadow);
+    animation: flow 2s ease-in-out infinite;
+}

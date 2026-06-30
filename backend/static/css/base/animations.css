@@ -1,0 +1,70 @@
+/*==================================================
+            VHNet SYSTEM ANIMATION LAYER
+==================================================*/
+
+/* Particle Drift: Smooth atmospheric background movement */
+@keyframes floatParticle {
+    from {
+        transform: translateY(110vh);
+        opacity: 0.15;
+    }
+    20% {
+        opacity: 0.8;
+    }
+    to {
+        transform: translateY(-120vh);
+        opacity: 0;
+    }
+}
+
+/* Glass Shine: High-tech light-sweep on hover */
+@keyframes shine {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+/* UI Float: Gentle breathing effect for cards */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-6px);
+    }
+}
+
+/* Pipeline Flow: Indicator movement for workflow arrows */
+@keyframes flow {
+    0%, 100% {
+        transform: translateY(-2px);
+        opacity: 0.5;
+    }
+    50% {
+        transform: translateY(4px);
+        opacity: 1;
+    }
+}
+
+/* Global utility for standard pulse effects (useful for status indicators) */
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Apply floating effect to cards globally if desired */
+.glass-card {
+    animation: float 6s ease-in-out infinite;
+    animation-play-state: paused; /* Play only on interaction if needed */
+}
+
+.glass-card:hover {
+    animation-play-state: running;
+}

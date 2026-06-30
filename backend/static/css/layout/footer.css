@@ -1,0 +1,60 @@
+/*==================================================
+            VHNet SYSTEM FOOTER
+==================================================*/
+
+footer {
+    padding: 120px 8% 70px;
+    text-align: center;
+}
+
+/* Footer Container - Using global glass variables */
+.footer-box {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 40px 35px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    
+    /* Optimized Glass Layer */
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.08), rgba(255, 255, 255, 0.015));
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(var(--blur-lg));
+    -webkit-backdrop-filter: blur(var(--blur-lg));
+    
+    /* Depth */
+    box-shadow: 
+        var(--card-shadow), 
+        inset 0 1px 0 var(--glass-highlight-2);
+}
+
+/* Atmospheric Glow */
+.footer-box::before {
+    content: "";
+    position: absolute;
+    top: -60%;
+    left: -30%;
+    width: 180%;
+    height: 180%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.08), transparent 70%);
+    transform: rotate(20deg);
+    pointer-events: none;
+}
+
+.footer-title {
+    color: var(--primary);
+    font-size: 1.6rem; /* Slightly balanced for readability */
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+    text-shadow: 0 0 10px var(--primary-glow);
+}
+
+.footer-sub {
+    color: var(--paragraph);
+    font-size: 1.4rem;
+    line-height: 1.6;
+    letter-spacing: 1px;
+}

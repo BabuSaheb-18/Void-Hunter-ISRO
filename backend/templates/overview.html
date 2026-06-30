@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>VHNet Control Center | Mission Overview</title>
+    <link rel="stylesheet" href="../static/css/base/variables.css">
+<link rel="stylesheet" href="../static/css/base/reset.css">
+<link rel="stylesheet" href="../static/css/layout/background.css">
+<link rel="stylesheet" href="../static/css/layout/navbar.css">
+<link rel="stylesheet" href="../static/css/layout/hero.css">
+<link rel="stylesheet" href="../static/css/components/cards.css">
+<link rel="stylesheet" href="../static/css/components/upload.css">
+<link rel="stylesheet" href="../static/css/components/result.css">
+<link rel="stylesheet" href="../static/css/layout/footer.css">
+<link rel="stylesheet" href="../static/css/base/animations.css">
+<link rel="stylesheet" href="../static/css/responsive.css">
+  </head>
+
+  <body>
+    <div class="space-bg">
+        <div class="earth-horizon"></div> 
+    </div>
+
+    <div class="background-grid"></div>
+
+    <div id="particles"></div>
+    
+    <img src="{{ url_for('static', filename='image/satellite.png') }}" class="floating-satellite" alt="Satellite">
+    <img src="{{ url_for('static', filename='image/astronaut.png') }}" class="floating-astronaut" alt="Astronaut">
+
+    <nav class="navbar">
+      <div class="logo">🛰️ VHNet Control Center</div>
+
+      <div class="nav-links">
+        <a href="/" class="active-nav">🛰 Mission Overview</a>
+        <a href="/pipeline">⚙ Architecture Pipeline</a>
+        <a href="/inference">🚀 Launch Analysis</a>
+      </div>
+    </nav>
+
+   <section class="hero">
+      <div class="hero-content">
+        <div class="glass-card result-action-card1">
+          <h1>VHNet v2: Satellite Spectral Analysis</h1>
+          <h2>Mission Control: Intelligent Terrain Assessment</h2>
+          <p>
+            An advanced multi-task pipeline for real-time infrared fusion. VHNet v2 
+            automatically converts monochromatic IR satellite data into high-fidelity, 
+            colorized RGB imagery with integrated terrain classification.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="section-title">
+        <u>Core System Capabilities</u>
+      </h2>
+
+      <div class="feature-grid">
+        <div class="glass-card feature-card">
+          <h3>Spectral Colorization</h3>
+          <p>Mathematically map monochrome IR sensor data into natural, realistic RGB channels without hallucinating false colors.</p>
+        </div>
+
+        <div class="glass-card feature-card">
+          <h3>Semantic Segmentation</h3>
+          <p>Generate precise categorical masks to classify terrain into Water, Vegetation, Urban, and Bare Land for automated mapping.</p>
+        </div>
+
+        <div class="glass-card feature-card">
+          <h3>Super-Resolution</h3>
+          <p>Enhance spatial details, sharpening structural boundaries like road networks and coastlines from 512px to 1024px.</p>
+        </div>
+
+        <div class="glass-card feature-card">
+          <h3>Multi-Task Optimization</h3>
+          <p>Utilize a unified deep learning pipeline that balances perceptual reconstruction losses with structural cross-entropy accuracy.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="tech-grid">
+    <div class="tech-card">
+        <span class="title">Telemetry Source</span>
+        <span class="value">Landsat 8 / 9 USGS</span>
+    </div>
+    <div class="tech-card">
+        <span class="title">Engine Architecture</span>
+        <span class="value">VHNet v2</span>
+    </div>
+    <div class="tech-card">
+        <span class="title">Input Tensor</span>
+        <span class="value">Infrared Image</span>
+    </div>
+
+    <div class="tech-card">
+        <span class="title">Inference Outputs</span>
+        <span class="value">RGB</span>
+    </div>
+    <div class="tech-card">
+        <span class="title">Evaluation Metrics</span>
+        <span class="value">PSNR • SSIM </span>
+    </div>
+    <div class="tech-card">
+        <span class="title">Backend Framework</span>
+        <span class="value">PyTorch + Flask</span>
+    </div>
+</section>
+
+    <footer>
+      <div class="footer-box">
+        <div class="footer-title">TEAM VOID HUNTER</div>
+        <div class="footer-sub">ISRO Hackathon 2026</div>
+      </div>
+    </footer>
+    
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

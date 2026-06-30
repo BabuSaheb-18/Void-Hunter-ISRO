@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>VHNet Control Center | Launch Analysis</title>
+     <link rel="stylesheet" href="../static/css/base/variables.css">
+<link rel="stylesheet" href="../static/css/base/reset.css">
+<link rel="stylesheet" href="../static/css/layout/background.css">
+<link rel="stylesheet" href="../static/css/layout/navbar.css">
+<link rel="stylesheet" href="../static/css/layout/hero.css">
+<link rel="stylesheet" href="../static/css/components/cards.css">
+<link rel="stylesheet" href="../static/css/components/upload.css">
+<link rel="stylesheet" href="../static/css/components/result.css">
+<link rel="stylesheet" href="../static/css/layout/footer.css">
+<link rel="stylesheet" href="../static/css/base/animations.css">
+<link rel="stylesheet" href="../static/css/responsive.css">
+
+  <body>
+    <div class="space-bg">
+        <div class="earth-horizon"></div> 
+    </div>
+    <div class="background-grid"></div>
+    <div id="particles"></div>
+    
+    <img src="{{ url_for('static', filename='image/satellite.png') }}"
+         class="floating-satellite inference-satellite" alt="Satellite">
+    <img src="{{ url_for('static', filename='image/astronaut.png') }}"
+         class="floating-astronaut inference-astronaut" alt="Astronaut">
+   
+    <nav class="navbar">
+      <div class="logo">🛰️ VHNet Control Center</div>
+      <div class="nav-links">
+        <a href="/"> 🛰 Mission Overview </a>
+        <a href="/pipeline"> ⚙ Architecture Pipeline </a>
+        <a href="/inference" class="active-nav"> 🚀 Launch Analysis </a>
+      </div>
+    </nav>
+
+    <section class="hero">
+  <div class="hero-content">
+    <div class="glass-card result-action-card1">
+      <h1>VHNet v2 Inference</h1>
+      <h2>Data-to-Decision: Semantic Spectral Analysis</h2>
+      <p>
+        The VHNet v2 pipeline transforms raw infrared satellite data into 
+        high-fidelity, colorized RGB imagery with integrated object 
+        classification for immediate, data-driven assessment.
+      </p>
+    </div>
+  </div>
+</section>
+
+   <section class="upload-section">
+  <div class="upload-container">
+    <h2>Initiate Analysis</h2>
+    <p>Upload an IR satellite tile (PNG/JPG/TIF) to begin automated fusion.</p>
+    
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="image" class="upload-area">
+            <i class="upload-icon">🚀</i>
+            <div id="fileName">Drop IR file here</div>
+            <input type="file" name="image" id="image" hidden required onchange="document.getElementById('fileName').innerText = this.files[0].name">
+        </label>
+        <button type="submit" class="upload-btn">Start Analysis</button>
+    </form>
+  </div>
+</section>
+
+
+    <footer>
+      <div class="footer-box">
+        <div class="footer-title">Team Void Hunter</div>
+        <div class="footer-sub">ISRO Hackathon 2026</div>
+      </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+  </body>
+</html>

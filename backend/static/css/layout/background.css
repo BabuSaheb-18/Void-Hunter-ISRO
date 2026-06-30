@@ -1,0 +1,86 @@
+/* ==================================================
+            SPACE & EARTH BACKGROUND SYSTEM
+================================================== */
+/* ==================================================
+   SPACE & EARTH BACKGROUND SYSTEM
+================================================== */
+.space-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -100;
+    background-color: #01060f; /* Keep the deep space black background */
+    overflow: hidden;
+}
+
+.earth-horizon {
+    position: absolute;
+    bottom: -10%; /* Pushes the image down slightly */
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../../image/earth.png");
+    /* Use 'contain' to force the whole planet to fit without cropping */
+    background-size: cover; 
+    background-repeat: no-repeat;
+    /* 'center 120%' pushes the image further down so the land disappears off the bottom */
+    background-position: center 10%; 
+    z-index: 50;
+}
+/* Cosmic Overlay for text readability */
+.space-bg::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% 100%, rgba(3, 7, 18, 0) 0%, rgba(3, 7, 18, 0.8) 100%);
+    pointer-events: none;
+}
+
+/* ==========================================
+   FLOATING SPACE OBJECTS
+   Ensure these are fixed to the viewport and high z-index
+========================================== */
+/* Update your CSS paths to this: */
+.floating-satellite {
+    content: url("../../image/satellite.png"); /* Use two dots instead of three */
+}
+
+.floating-astronaut {
+    content: url("../../image/astronaut.png"); /* Use two dots instead of three */
+}
+.floating-satellite {
+    position: fixed;
+    top: 10%;
+    left: 0%;
+    width: 350px;
+    z-index: 5; /* Higher than background */
+    pointer-events: none;
+    filter: drop-shadow(0 0 20px rgba(77, 183, 255, 0.4));
+    animation: satelliteOrbit 15s ease-in-out infinite;
+}
+
+.floating-astronaut {
+    position: fixed;
+    bottom: 0%;
+    right: 0%;
+    width: 300px;
+    z-index: 5;
+    pointer-events: none;
+    filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.3));
+    animation: astronautFloat 10s ease-in-out infinite;
+}
+.floating-satellite, .floating-astronaut {
+    position: fixed;
+    z-index: 5; /* Forces them above the Earth */
+    pointer-events: none;
+    /* Brightens the objects and adds a subtle glow to distinguish them from the space backdrop */
+    filter: brightness(1.3) drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+}
+@keyframes satelliteOrbit {
+    0%, 100% { transform: translateY(0) rotate(-10deg); }
+    50% { transform: translateY(-30px) rotate(-5deg); }
+}
+
+@keyframes astronautFloat {
+    0%, 100% { transform: translateY(0) rotate(5deg); }
+    50% { transform: translateY(-20px) rotate(-5deg); }
+}

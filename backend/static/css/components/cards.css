@@ -1,0 +1,163 @@
+/*==================================================
+            PREMIUM GLASS COMPONENT SYSTEM
+==================================================*/
+
+.glass-card {
+    position: relative;
+    overflow: hidden;
+    background: var(--glass);
+    backdrop-filter: blur(var(--blur));
+    -webkit-backdrop-filter: blur(var(--blur));
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--glass-shadow), inset 0 1px 0 var(--glass-highlight);
+    transition: var(--transition-slow);
+}
+
+/* Base Shine Effect */
+.glass-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(110deg, transparent 15%, rgba(255, 255, 255, 0.08) 35%, rgba(255, 255, 255, 0.02) 55%, transparent 80%);
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+/* Hover Interaction */
+.glass-card:hover {
+    transform: translateY(-8px) scale(1.01);
+    border-color: var(--glass-border-hover);
+    box-shadow: var(--hover-shadow), inset 0 1px 0 var(--glass-highlight-2);
+}
+
+/*==================================================
+            GRID SYSTEM & COMPONENT VARIANTS
+==================================================*/
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 28px;
+    max-width: 1400px;
+    margin: 40px auto;
+}
+
+.feature-card {
+    padding: 40px;
+    text-align: left;
+}
+
+.feature-card h3 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    margin-bottom: 18px;
+}
+
+.feature-card p {
+    color: var(--paragraph);
+    font-size: 1.3rem;
+    line-height: 1.8;
+}
+
+/* ==================================================
+   TECHNICAL SPECIFICATIONS GRID (3x2)
+================================================== */
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 30px;
+    max-width: 1400px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.tech-card {
+    background: rgba(7, 18, 30, 0.6);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    padding: 40px;
+    text-align: center;
+    transition: 0.4s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Title styling: Primary blue color, larger font */
+.tech-card .title {
+    display: block;
+    text-decoration: underline;
+    color: var(--primary);
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+/* Value styling: White color, even bigger font */
+.tech-card .value {
+    display: block;
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+/*==================================================
+            RESULT PAGE SPECIFIC
+==================================================*/
+
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.image-card {
+    padding: 20px;
+    text-align: center;
+}
+
+.image-header h2 {
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.result-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--glass-border);
+    transition: var(--transition);
+}
+
+.result-image:hover {
+    transform: scale(1.02);
+    border-color: var(--primary);
+}
+
+.analysis-card {
+    padding: 30px;
+    max-width: 900px;
+    margin: 20px auto;
+}
+
+/* Standardized Row for Metrics/Interpretation */
+.metric-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--glass-highlight);
+}
+
+.metric-name { color: var(--text-light); }
+.metric-value { color: var(--heading); font-weight: 600; }
+.metric-success { color: var(--success); font-weight: 600; }

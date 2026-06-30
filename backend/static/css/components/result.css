@@ -1,0 +1,113 @@
+/*==================================================
+            VHNet ANALYSIS RESULT MODULE
+==================================================*/
+
+.result-page {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 60px 20px 100px;
+}
+
+/* --- HERO & BADGES --- */
+.hero-result-card {
+    padding: 50px;
+    text-align: center;
+}
+
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 24px;
+    border-radius: var(--radius-xl);
+    background: rgba(67, 255, 153, 0.1);
+    border: 1px solid var(--success);
+    color: var(--success);
+    font-weight: 600;
+    margin-bottom: 25px;
+    box-shadow: 0 0 15px var(--success-glow);
+}
+
+/* --- COMPARISON GRID (The "Object Interpretation" Layout) --- */
+.comparison-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 55px;
+}
+
+.image-card {
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    min-height: 500px;
+}
+
+.image-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: var(--radius-sm);
+    background: rgba(0, 0, 0, 0.2);
+    border: 1px solid var(--glass-border);
+    overflow: hidden;
+}
+
+.result-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: var(--transition-slow);
+}
+
+/* --- METRIC TABLE (Data-Driven Interpretation) --- */
+.analysis-table {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.metric-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 24px;
+    background: var(--glass-highlight);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--radius-sm);
+    transition: var(--transition);
+}
+
+.metric-row:hover {
+    background: var(--hover-bg);
+    border-color: var(--primary);
+    transform: translateX(5px);
+}
+
+/* --- BUTTON SYSTEM --- */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.action-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 18px 35px;
+    border-radius: var(--radius);
+    font-weight: 600;
+    text-decoration: none;
+    transition: var(--transition);
+    border: 1px solid transparent;
+}
+
+.primary-btn { background: var(--btn-gradient); color: var(--heading); box-shadow: var(--primary-shadow); }
+.secondary-btn { background: var(--glass); border-color: var(--glass-border); color: var(--text); }
+.tertiary-btn { background: var(--success); color: var(--bg); font-weight: 700; }

@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>VHNet Control Center | Analysis Results</title>
+    <link rel="stylesheet" href="../static/css/base/variables.css">
+<link rel="stylesheet" href="../static/css/base/reset.css">
+<link rel="stylesheet" href="../static/css/layout/background.css">
+<link rel="stylesheet" href="../static/css/layout/navbar.css">
+<link rel="stylesheet" href="../static/css/layout/hero.css">
+<link rel="stylesheet" href="../static/css/components/cards.css">
+<link rel="stylesheet" href="../static/css/components/upload.css">
+<link rel="stylesheet" href="../static/css/components/result.css">
+<link rel="stylesheet" href="../static/css/layout/footer.css">
+<link rel="stylesheet" href="../static/css/base/animations.css">
+<link rel="stylesheet" href="../static/css/responsive.css">
+  </head>
+
+  <body>
+    <div class="space-bg"><div class="earth-horizon"></div></div>
+    <div class="background-grid"></div>
+
+    <nav class="navbar">
+      <div class="logo">🛰️ VHNet Control Center</div>
+      <div class="nav-links">
+        <a href="/"> 🛰 Mission Overview </a>
+        <a href="/pipeline"> ⚙ Architecture Pipeline </a>
+        <a href="/inference" class="active-nav"> 🚀 Launch Analysis </a>
+      </div>
+    </nav>
+
+    <main class="result-page">
+      <section class="hero result-hero">
+        <div class="hero-content">
+          <div class="glass-card hero-result-card">
+            <span class="status-badge">✔ Multi-Task Inference Complete</span>
+            <h1>Spectral Reconstruction & Object Interpretation</h1>
+          </div>
+        </div>
+      </section>
+
+      <section class="comparison-section">
+        <div class="comparison-grid">
+          <div class="glass-card image-card">
+            <div class="image-header"><h2>Raw IR Input</h2></div>
+            <div class="image-wrapper"><img src="{{ report.web_ir_path }}" alt="Infrared Input" class="result-image"></div>
+          </div>
+          <div class="glass-card image-card">
+            <div class="image-header"><h2>Enhanced True-Color RGB</h2></div>
+            <div class="image-wrapper"><img src="{{ report.web_rgb_path }}" alt="Enhanced RGB" class="result-image"></div>
+          </div>
+        </div>
+      </section>
+
+     <section class="processing-section">
+        <h2 class="section-title"><u>Geographic Object Interpretation</u></h2>
+        <div class="glass-card analysis-card">
+          <div class="analysis-table">
+            <div class="metric-row"><div class="metric-name">🌊 Water Bodies</div><div class="metric-success">{{ report.water }}</div></div>
+            <div class="metric-row"><div class="metric-name">🌿 Vegetation</div><div class="metric-success">{{ report.vegetation }}</div></div>
+            <div class="metric-row"><div class="metric-name">🏙 Urban Structures</div><div class="metric-success">{{ report.urban }}</div></div>
+            <div class="metric-row"><div class="metric-name">🛣 Road Networks</div><div class="metric-success">{{ report.roads }}</div></div>
+            <div class="metric-row"><div class="metric-name">🟫 Bare Land</div><div class="metric-success">{{ report.bareland }}</div></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="processing-section">
+        <h2 class="section-title"><u>Model Telemetry & Fidelity Metrics</u></h2>
+        <div class="glass-card analysis-card">
+          <div class="analysis-table">
+            <div class="metric-row"><div class="metric-name">Input Resolution</div><div class="metric-value">{{ report.input_resolution }}</div></div>
+            <div class="metric-row"><div class="metric-name">Output Resolution</div><div class="metric-value">{{ report.output_resolution }}</div></div>
+            <div class="metric-row"><div class="metric-name">Execution Latency</div><div class="metric-value">{{ report.inference_time }}</div></div>
+            <div class="metric-row"><div class="metric-name">Signal Fidelity (PSNR)</div><div class="metric-value">{{ report.psnr }} dB</div></div>
+            <div class="metric-row"><div class="metric-name">Structural Similarity (SSIM)</div><div class="metric-value">{{ report.ssim }}</div></div>
+            <div class="metric-row"><div class="metric-name">Model Core</div><div class="metric-value">VHNet v2</div></div>
+          </div>
+        </div>
+      </section>
+      
+  <div class="action-buttons" style="display: flex; gap: 15px; justify-content: center;">
+    
+    <a href="{{ report.web_rgb_path }}" download class="action-btn primary-btn">
+      📥 Download RGB
+    </a>
+
+    <a href="/inference" class="action-btn tertiary-btn">
+      🔄 Process Another
+    </a>
+    
+    <a href="{{ url_for('download_report') }}" download class="action-btn primary-btn">
+      📄 Download Report
+    </a>
+  </div>
+</section>
+
+    <footer>
+      <div class="footer-box">
+        <div class="footer-title">Team Void Hunter</div>
+        <div class="footer-sub">ISRO Hackathon 2026</div>
+      </div>
+    </footer>
+  </body>
+</html>
